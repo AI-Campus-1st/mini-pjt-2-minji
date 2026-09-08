@@ -97,3 +97,21 @@ FROM tb_product p
 JOIN tb_ranking r ON p.product_id = r.product_id
 WHERE r.rank_change > 0
 ORDER BY r.score DESC limit 5;
+
+-- 카테고리별 Top3
+SELECT category_id, brand, name, current_rank, previous_rank, score
+FROM (
+    SELECT
+        p.category_id,
+        p.brand,
+        p.name,
+        r.current_rank,
+        r.previous_rank,
+        r.rank_change,
+        r.score,
+        ROW_NUMBER() OVER (PARTITION BY p.category_id ORDER BY r.score DESC) AS rn
+    FROM tb_product p
+    JOIN tb_ranking r ON p.product_id = r.product_id
+    WHERE r.rank_change > 0
+) ranked
+WHERE rn <= 3;
