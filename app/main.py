@@ -24,9 +24,15 @@ with col3:
     if st.button('[립 메이크업]'):
         st.session_state['category'] = 'lip'
 
-if 'page' not in st.session_state:
-    st.session_state.page = 'main'
+if 'category' not in st.session_state:
+    st.session_state.category = 'foundation'
 
-if st.session_state.page == 'main':
-    st.title('메인')
+if st.session_state.category == 'foundation':
+    st.title('베이스 메이크업')
+
+elif st.session_state.category == 'eyeshadow':
+    st.title('아이 메이크업')
+
+elif st.session_state.category == 'lip':
+    st.title('립 메이크업')
     
