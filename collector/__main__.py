@@ -1,6 +1,7 @@
 from crawler import crawl_base, crawl_eye, crawl_lip
 from loader import load_data
 
+
 import pandas as pd
 
 base_data = crawl_base()
