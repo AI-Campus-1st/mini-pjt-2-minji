@@ -8,7 +8,7 @@ import os
 
 
 def load_data():
-    df = pd.read_csv('../data/raw/glowpick_20260906_clean.csv')
+    df = pd.read_csv('data/raw/glowpick_20260906_clean.csv')
     load_dotenv()
 
     DB_CONFIG = {

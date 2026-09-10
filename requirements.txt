@@ -1,1 +1,8 @@
 streamlit
+pandas
+plotly
+pymysql
+python-dotenv
+requests
+beautifulsoup4
+urllib3

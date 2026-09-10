@@ -2,10 +2,11 @@ import os
 import pymysql
 import pandas as pd
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 
-
+@st.cache_data(ttl=3600)
 def load_mart_data():
 
     conn = pymysql.connect(

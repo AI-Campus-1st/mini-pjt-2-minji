@@ -1,0 +1,11 @@
+PASTEL_COLORS = [
+    "#A8D8EA",
+    "#F6C1CC",
+    "#B8E0D2",
+    "#D7C0E8",
+    "#FAD6A5"
+]
+
+PASTEL_BLUE = "#A8D8EA"
+PASTEL_PINK = "#F6C1CC"
+PASTEL_MINT = "#B8E0D2"
