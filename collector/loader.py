@@ -23,54 +23,6 @@ def load_data():
 
     conn = pymysql. connect(cursorclass=DictCursor, **DB_CONFIG)
 
-    # sql_product = """
-    # INSERT INTO tb_product (category_id, brand, name)
-    #     VALUES (%s, %s, %s)
-    # """
-    # with conn.cursor() as cur:
-    #     for i in range(len(df)):
-    #         row = df.iloc[i]
-    #         category_id = row['category_id']
-    #         brand = row['brand']
-    #         name = row['product_name']
-    #         cur.execute(sql_product, (category_id, brand, name))
-    # conn.commit()
-    # conn.close()
-
-    # sql_ranking = """
-    # INSERT INTO tb_ranking (
-    #     product_id,
-    #     current_rank,
-    #     previous_rank,
-    #     rank_change,
-    #     update_date,
-    #     rating,
-    #     review_count,
-    #     price
-    # )
-    # VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-    # """
-    # with conn.cursor() as cur:
-    #     for i in range(len(df)):
-    #         row = df.iloc[i]
-    #         product_id = i + 1 
-    #         current_rank = row['current_rank']
-    #         previous_rank = row['previous_rank']
-    #         rank_change = row['rank_change_value']
-    #         update_date = row['update_date']
-    #         rating = row['rating']
-    #         review_count = row['review_count']
-    #         price = row['price']
-    #         cur.execute(sql_ranking, (product_id,
-    #             current_rank,
-    #             previous_rank,
-    #             rank_change,
-    #             update_date,
-    #             rating,
-    #             review_count,
-    #             price))
-    # conn.commit()
-    # conn.close()
 
     sql_score = """
     UPDATE tb_ranking
